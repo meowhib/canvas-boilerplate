@@ -27,7 +27,7 @@ window.addEventListener("mousemove", function(e){
 })
 
 window.addEventListener("keydown", function(e){
-    // Keycodes
+    // Keycodes (32 space) (13 enter) (38 UP 37 LEFT 39 RIGHT 40 DOWN)
 })
 
 // Functions
@@ -37,4 +37,21 @@ function randBool(){
 
 function randInt(){
     return Math.floor(Math.random() * (max - min) ) + min;
+}
+
+function clearScr(){
+    ctx.clearRect(0, 0, width, height);
+}
+
+function drawDisc(x, y){
+    ctx.beginPath();
+    ctx.arc(x, y, 10, 0, PI * 2, true);
+    ctx.fill();
+}
+
+function drawLine(pt0, pt1){
+    ctx.beginPath();
+    ctx.moveTo(pt0.x, pt0.y);
+    ctx.lineTo(pt1.x, pt1.y);
+    ctx.stroke();
 }
